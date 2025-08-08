@@ -2,6 +2,8 @@ name: Keep Supabase Alive
 on:
   schedule:
     - cron: "0 3 */4 * *"
+  workflow_dispatch:
+  
 jobs:
   ping:
     runs-on: ubuntu-latest
