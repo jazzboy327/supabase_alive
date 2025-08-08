@@ -1,0 +1,12 @@
+name: Keep Supabase Alive
+on:
+  schedule:
+    - cron: "0 3 */4 * *"
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Supabase
+        run: |
+          curl -s https://ansxsldpzaiqomeuwsuo.supabase.co/rest/v1/game_info/1 \
+            -H "apikey: ${{ secrets.SUPABASE_KEY }}"
