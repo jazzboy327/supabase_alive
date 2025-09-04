@@ -14,3 +14,7 @@ jobs:
         run: |
           curl -s https://ansxsldpzaiqomeuwsuo.supabase.co/rest/v1/game_info?game_id=eq.3 \
             -H "apikey: ${{ env.SUPABASE_KEY }}"
+            -H "Authorization: Bearer ${SUPABASE_KEY}" \
+            -H "Accept: application/json" \
+            -s -o /dev/null \
+            -w 'status=%{http_code} time_total=%{time_total}\n'
